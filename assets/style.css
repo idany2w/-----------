@@ -1,0 +1,301 @@
+.container{
+    max-width: 1300px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table{
+    width: 100%;
+}
+
+textarea{
+    width: 100%;
+}
+
+/**/
+
+.scaling-svg-container {
+    position: relative; 
+    height:0; 
+    width: 100%; 
+    padding: 0;
+    padding-bottom: 100%;
+  }
+  .scaling-svg {
+    position: absolute; 
+    height: 100%; 
+    width: 100%; 
+    left: 0; 
+    top:0;
+  }
+  
+  #maplist p {
+    cursor: pointer;
+  }
+  
+  @keyframes points {
+  from {visibility:visible; transform: scale(0.5);}
+  50% {transform: scale(1.25);}
+  to {transform: scale(1); visibility:visible; }
+  }
+  
+  #Points g{
+    transform-origin: bottom;
+    transform-box: fill-box;
+    transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) .25s;
+    visibility: hidden;
+    animation: points  .5s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+  }
+  
+  a[id^="s"]:focus path:not([fill="white"]),
+  a[id^="s"]:hover path:not([fill="white"]){
+    fill:#868686;
+  }
+  
+  :root{
+    --BoxSize: scale(1);
+  }
+  
+  :root #map-1{
+    --BoxSize: scale(1.52425);
+  }
+  
+  /*слева*/
+  /*смещение всего тултипа в уменьш состоянии*/
+  #TooltipS-ex1-2{
+    transform: translateX(22%) scale(0.5);
+  }
+  :root #map-1 #TooltipS-ex1-2{
+    --BoxSize: translateX(50%) scale(1.52425);
+  }
+  #map-1 #TooltipS-ex1-2 [id*="TooltipBoxDot"]{
+    transform: translateX(-4%);
+  }
+  
+  
+  
+  #Tooltip1-5,
+  #Tooltip1-2{
+    transform: translateX(-25%) scale(0.5);
+  }
+  :root #map-1 #Tooltip1-5,
+  :root #map-1 #Tooltip1-2{
+    --BoxSize: translateX(-50%) scale(1.52425);
+  }
+  #map-1 #Tooltip1-5 [id*="TooltipBoxDot"],
+  #map-1 #Tooltip1-2 [id*="TooltipBoxDot"]{
+    transform: translateX(3.5%);
+  }
+  
+  
+  @media screen and (max-width:800px){
+    :root{
+       --BoxSize: scale(2);
+    }
+    :root #map-1{
+      --BoxSize: scale(3.0485);
+    }
+    :root #map-1 #TooltipS-ex1-2{
+      --BoxSize: translateX(90%) scale(3.0485);
+    }
+  
+    #Tooltip1-3_1-4,
+    #Tooltip1-6,
+    #Tooltip1-7{
+      transform: translateX(-25%) scale(0.5);
+    }
+    :root #map-1 #Tooltip1-5,
+    :root #map-1 #Tooltip1-2,
+    :root #map-1 #Tooltip1-3_1-4,
+    :root #map-1 #Tooltip1-6,
+    :root #map-1 #Tooltip1-7{
+      --BoxSize: translateX(-90%) scale(3.0485);
+    }
+    #map-1 #Tooltip1-3_1-4 [id*="TooltipBoxDot"],
+    #map-1 #Tooltip1-6 [id*="TooltipBoxDot"],
+    #map-1 #Tooltip1-7 [id*="TooltipBoxDot"]{
+      transform: translateX(3.5%);
+    }
+  
+    #Tooltip2-21{
+      transform: translateX(25%) scale(0.5);
+    }
+    :root #map-2 #Tooltip2-21{
+      --BoxSize: translateX(55%) scale(2);
+    }
+    #map-2 #Tooltip2-21 [id*="TooltipBoxDot"]{
+      transform: translateX(-3.5%);
+    }
+  
+    #Tooltip2-17{
+      transform: translateX(22%) scale(0.5);
+    }
+    :root #map-2 #Tooltip2-17{
+      --BoxSize: translateX(45%) scale(2);
+    }
+    #map-2 #Tooltip2-17 [id*="TooltipBoxDot"]{
+      transform: translateX(-4%);
+    }
+  
+    #Tooltip3-20{
+      transform: translateX(22%) scale(0.5);
+    }
+    :root #map-3 #Tooltip3-20{
+      --BoxSize: translateX(50%) scale(2);
+    }
+    #map-3 #Tooltip3-20 [id*="TooltipBoxDot"]{
+      transform: translateX(-4%);
+    }
+  
+    #Tooltip3-21{
+      transform: translateX(22%) scale(0.5);
+    }
+    :root #map-3 #Tooltip3-21{
+      --BoxSize: translateX(55%) scale(2);
+    }
+    #map-3 #Tooltip3-21 [id*="TooltipBoxDot"]{
+      transform: translateX(-4%);
+    }
+  
+    #Tooltip3-7{
+      transform: translateX(-22%) scale(0.5);
+    }
+    :root #map-3 #Tooltip3-7{
+      --BoxSize: translateX(-25%) scale(2);
+    }
+    #map-3 #Tooltip3-7 [id*="TooltipBoxDot"]{
+      transform: translateX(4%);
+    }
+  }
+  
+  g[id*="Tooltip"]{
+    transform-origin: bottom;
+    transform-box: fill-box;
+    transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) .25s;
+    transform: scale(0.5);
+    opacity: 0;
+    display: none;
+  }
+  
+  #small3-5:hover ~ #TooltipSmall3-5,     #small3-5:focus ~ #TooltipSmall3-5,     #TooltipSmall3-5:hover, 
+  #small3-4:hover ~ #TooltipSmall3-4,     #small3-4:focus ~ #TooltipSmall3-4,     #TooltipSmall3-4:hover, 
+  #small3-3:hover ~ #TooltipSmall3-3,     #small3-3:focus ~ #TooltipSmall3-3,     #TooltipSmall3-3:hover,
+  #small3-2:hover ~ #TooltipSmall3-2,     #small3-2:focus ~ #TooltipSmall3-2,     #TooltipSmall3-2:hover,
+  #small3-1:hover ~ #TooltipSmall3-1,     #small3-1:focus ~ #TooltipSmall3-1,     #TooltipSmall3-1:hover,
+  #s3-33:hover    ~ #Tooltip3-33,         #s3-33:focus    ~ #Tooltip3-33,         #Tooltip3-33:hover,
+  #s3-31:hover    ~ #Tooltip3-31,         #s3-31:focus    ~ #Tooltip3-31,         #Tooltip3-31:hover,
+  #s3-30:hover    ~ #Tooltip3-30,         #s3-30:focus    ~ #Tooltip3-30,         #Tooltip3-30:hover,
+  #s3-29a:hover   ~ #Tooltip3-29a,        #s3-29a:focus   ~ #Tooltip3-29a,        #Tooltip3-29a:hover,
+  #s3-29:hover    ~ #Tooltip3-29,         #s3-29:focus    ~ #Tooltip3-29,         #Tooltip3-29:hover,
+  #s3-28:hover    ~ #Tooltip3-28,         #s3-28:focus    ~ #Tooltip3-28,         #Tooltip3-28:hover,
+  #s3-26:hover    ~ #Tooltip3-26,         #s3-26:focus    ~ #Tooltip3-26,         #Tooltip3-26:hover,
+  #s3-25:hover    ~ #Tooltip3-25,         #s3-25:focus    ~ #Tooltip3-25,         #Tooltip3-25:hover,
+  #s3-24:hover    ~ #Tooltip3-24,         #s3-24:focus    ~ #Tooltip3-24,         #Tooltip3-24:hover,
+  #s3-23:hover    ~ #Tooltip3-23,         #s3-23:focus    ~ #Tooltip3-23,         #Tooltip3-23:hover,
+  #s3-22:hover    ~ #Tooltip3-22,         #s3-22:focus    ~ #Tooltip3-22,         #Tooltip3-22:hover,
+  #s3-21:hover    ~ #Tooltip3-21,         #s3-21:focus    ~ #Tooltip3-21,         #Tooltip3-21:hover,
+  #s3-20:hover    ~ #Tooltip3-20,         #s3-20:focus    ~ #Tooltip3-20,         #Tooltip3-20:hover,
+  #s3-19:hover    ~ #Tooltip3-19,         #s3-19:focus    ~ #Tooltip3-19,         #Tooltip3-19:hover,
+  #s3-18:hover    ~ #Tooltip3-18,         #s3-18:focus    ~ #Tooltip3-18,         #Tooltip3-18:hover,
+  #s3-10:hover    ~ #Tooltip3-10,         #s3-10:focus    ~ #Tooltip3-10,         #Tooltip3-10:hover,
+  #s3-9:hover     ~ #Tooltip3-9,          #s3-9:focus     ~ #Tooltip3-9,          #Tooltip3-9:hover,
+  #s3-8:hover     ~ #Tooltip3-8,          #s3-8:focus     ~ #Tooltip3-8,          #Tooltip3-8:hover,
+  #s3-7:hover     ~ #Tooltip3-7,          #s3-7:focus     ~ #Tooltip3-7,          #Tooltip3-7:hover,
+  #s3-6:hover     ~ #Tooltip3-6,          #s3-6:focus     ~ #Tooltip3-6,          #Tooltip3-6:hover,
+  #s3-5:hover     ~ #Tooltip3-5,          #s3-5:focus     ~ #Tooltip3-5,          #Tooltip3-5:hover,
+  #s3-4:hover     ~ #Tooltip3-4,          #s3-4:focus     ~ #Tooltip3-4,          #Tooltip3-4:hover,
+  #s3-3:hover     ~ #Tooltip3-3,          #s3-3:focus     ~ #Tooltip3-3,          #Tooltip3-3:hover,
+  #s3-2:hover     ~ #Tooltip3-2,          #s3-2:focus     ~ #Tooltip3-2,          #Tooltip3-2:hover,
+  #s3-1:hover     ~ #Tooltip3-1,          #s3-1:focus     ~ #Tooltip3-1,          #Tooltip3-1:hover,
+  #small2-1:hover ~ #TooltipSmall2-1,     #small2-1:focus ~ #TooltipSmall2-1,     #TooltipSmall2-1:hover, 
+  #small2-2:hover ~ #TooltipSmall2-2,     #small2-2:focus ~ #TooltipSmall2-2,     #TooltipSmall2-2:hover,
+  #small2-3:hover ~ #TooltipSmall2-3,     #small2-3:focus ~ #TooltipSmall2-3,     #TooltipSmall2-3:hover,
+  #s2-1:hover     ~ #Tooltip2-1,          #s2-1:focus   ~ #Tooltip2-1,            #Tooltip2-1:hover, 
+  #s2-2:hover     ~ #Tooltip2-2,          #s2-2:focus   ~ #Tooltip2-2,            #Tooltip2-2:hover,
+  #s2-3:hover     ~ #Tooltip2-3,          #s2-3:focus   ~ #Tooltip2-3,            #Tooltip2-3:hover,
+  #s2-4:hover     ~ #Tooltip2-4,          #s2-4:focus   ~ #Tooltip2-4,            #Tooltip2-4:hover,
+  #s2-5:hover     ~ #Tooltip2-5,          #s2-5:focus   ~ #Tooltip2-5,            #Tooltip2-5:hover,
+  #s2-5a:hover    ~ #Tooltip2-5a,         #s2-5a:focus  ~ #Tooltip2-5a,           #Tooltip2-5a:hover,
+  #s2-6:hover     ~ #Tooltip2-6,          #s2-6:focus   ~ #Tooltip2-6,            #Tooltip2-6:hover,
+  #s2-7_2-8:hover ~ #Tooltip2-7_2-8,      #s2-7_2-8:focus ~ #Tooltip2-7_2-8,      #Tooltip2-7_2-8:hover,
+  #s2-9:hover     ~ #Tooltip2-9,          #s2-9:focus   ~ #Tooltip2-9,            #Tooltip2-9:hover,
+  #s2-10:hover    ~ #Tooltip2-10,         #s2-10:focus  ~ #Tooltip2-10,           #Tooltip2-10:hover,
+  #s2-11:hover    ~ #Tooltip2-11,         #s2-11:focus  ~ #Tooltip2-11,           #Tooltip2-11:hover,
+  #s2-14:hover    ~ #Tooltip2-14,         #s2-14:focus  ~ #Tooltip2-14,           #Tooltip2-14:hover,
+  #s2-12:hover    ~ #Tooltip2-12,         #s2-12:focus  ~ #Tooltip2-12,           #Tooltip2-12:hover,
+  #s2-15:hover    ~ #Tooltip2-15,         #s2-15:focus  ~ #Tooltip2-15,           #Tooltip2-15:hover,
+  #s2-16:hover    ~ #Tooltip2-16,         #s2-16:focus  ~ #Tooltip2-16,           #Tooltip2-16:hover,
+  #s2-17:hover    ~ #Tooltip2-17,         #s2-17:focus  ~ #Tooltip2-17,           #Tooltip2-17:hover,
+  #s2-21:hover    ~ #Tooltip2-21,         #s2-21:focus  ~ #Tooltip2-21,           #Tooltip2-21:hover,
+  #s2-22:hover    ~ #Tooltip2-22,         #s2-22:focus  ~ #Tooltip2-22,           #Tooltip2-22:hover,
+  #s2-24:hover    ~ #Tooltip2-24,         #s2-24:focus  ~ #Tooltip2-24,           #Tooltip2-24:hover,
+  #s2-25a:hover   ~ #Tooltip2-25a,        #s2-25a:focus ~ #Tooltip2-25a,          #Tooltip2-25a:hover,
+  #s2-26:hover    ~ #Tooltip2-26,         #s2-26:focus  ~ #Tooltip2-26,           #Tooltip2-26:hover,
+  #s2-27:hover    ~ #Tooltip2-27,         #s2-27:focus  ~ #Tooltip2-27,           #Tooltip2-27:hover,
+  #s2-28:hover    ~ #Tooltip2-28,         #s2-28:focus  ~ #Tooltip2-28,           #Tooltip2-28:hover,
+  #s2-29:hover    ~ #Tooltip2-29,         #s2-29:focus  ~ #Tooltip2-29,           #Tooltip2-29:hover,
+  #s2-30:hover    ~ #Tooltip2-30,         #s2-30:focus  ~ #Tooltip2-30,           #Tooltip2-30:hover,
+  #s2-20:hover    ~ #Tooltip2-20,         #s2-20:focus  ~ #Tooltip2-20,           #Tooltip2-20:hover,
+  #s2-31:hover    ~ #Tooltip2-31,         #s2-31:focus  ~ #Tooltip2-31,           #Tooltip2-31:hover,
+  #s2-32:hover    ~ #Tooltip2-32,         #s2-32:focus  ~ #Tooltip2-32,           #Tooltip2-32:hover,
+  #s2-33:hover    ~ #Tooltip2-33,         #s2-33:focus  ~ #Tooltip2-33,           #Tooltip2-33:hover,
+  #s2-34:hover    ~ #Tooltip2-34,         #s2-34:focus  ~ #Tooltip2-34,           #Tooltip2-34:hover,
+  #s2-35:hover    ~ #Tooltip2-35,         #s2-35:focus  ~ #Tooltip2-35,           #Tooltip2-35:hover,
+  #s2-36:hover    ~ #Tooltip2-36,         #s2-36:focus  ~ #Tooltip2-36,           #Tooltip2-36:hover,
+  #s2-37:hover    ~ #Tooltip2-37,         #s2-37:focus  ~ #Tooltip2-37,           #Tooltip2-37:hover,
+  #s2-39:hover    ~ #Tooltip2-39,         #s2-39:focus  ~ #Tooltip2-39,           #Tooltip2-39:hover,
+  #small1-1:hover ~ #TooltipSmall1-1,     #small1-1:focus ~ #TooltipSmall1-1,     #TooltipSmall1-1:hover, 
+  #small1-2:hover ~ #TooltipSmall1-2,     #small1-2:focus ~ #TooltipSmall1-2,     #TooltipSmall1-2:hover,
+  #small1-3:hover ~ #TooltipSmall1-3,     #small1-3:focus ~ #TooltipSmall1-3,     #TooltipSmall1-3:hover,
+  #small1-4:hover ~ #TooltipSmall1-4,     #small1-4:focus ~ #TooltipSmall1-4,     #TooltipSmall1-4:hover,
+  #small1-5:hover ~ #TooltipSmall1-5,     #small1-5:focus ~ #TooltipSmall1-5,     #TooltipSmall1-5:hover,
+  #small1-6:hover ~ #TooltipSmall1-6,     #small1-6:focus ~ #TooltipSmall1-6,     #TooltipSmall1-6:hover,
+  #small1-7:hover ~ #TooltipSmall1-7,     #small1-7:focus ~ #TooltipSmall1-7,     #TooltipSmall1-7:hover,
+  #s1-1:hover     ~ #Tooltip1-1,          #s1-1:focus   ~ #Tooltip1-1,            #Tooltip1-1:hover,
+  #s1-2:hover     ~ #Tooltip1-2,          #s1-2:focus   ~ #Tooltip1-2,            #Tooltip1-2:hover,
+  #s1-3_1-4:hover ~ #Tooltip1-3_1-4,      #s1-3_1-4:focus ~ #Tooltip1-3_1-4,      #Tooltip1-3_1-4:hover,
+  #s1-5:hover     ~ #Tooltip1-5,          #s1-5:focus   ~ #Tooltip1-5,            #Tooltip1-5:hover,
+  #s1-6:hover     ~ #Tooltip1-6,          #s1-6:focus   ~ #Tooltip1-6,            #Tooltip1-6:hover,
+  #s1-7:hover     ~ #Tooltip1-7,          #s1-7:focus   ~ #Tooltip1-7,            #Tooltip1-7:hover,
+  #s1-8:hover     ~ #Tooltip1-8,          #s1-8:focus   ~ #Tooltip1-8,            #Tooltip1-8:hover,
+  #s1-9:hover     ~ #Tooltip1-9,          #s1-9:focus   ~ #Tooltip1-9,            #Tooltip1-9:hover,
+  #s1-10:hover    ~ #Tooltip1-10,         #s1-10:focus  ~ #Tooltip1-10,           #Tooltip1-10:hover,
+  #s1-11:hover    ~ #Tooltip1-11,         #s1-11:focus  ~ #Tooltip1-11,           #Tooltip1-11:hover,
+  #s1-12:hover    ~ #Tooltip1-12,         #s1-12:focus  ~ #Tooltip1-12,           #Tooltip1-12:hover,
+  #s1-14:hover    ~ #Tooltip1-14,         #s1-14:focus  ~ #Tooltip1-14,           #Tooltip1-14:hover,
+  #s1-15:hover    ~ #Tooltip1-15,         #s1-15:focus  ~ #Tooltip1-15,           #Tooltip1-15:hover,
+  #s1-16:hover    ~ #Tooltip1-16,         #s1-16:focus  ~ #Tooltip1-16,           #Tooltip1-16:hover,
+  #s1-17:hover    ~ #Tooltip1-17,         #s1-17:focus  ~ #Tooltip1-17,           #Tooltip1-17:hover,
+  #s1-19:hover    ~ #Tooltip1-19,         #s1-19:focus  ~ #Tooltip1-19,           #Tooltip1-19:hover,
+  #s1-20:hover    ~ #Tooltip1-20,         #s1-20:focus  ~ #Tooltip1-20,           #Tooltip1-20:hover,
+  #s1-21:hover    ~ #Tooltip1-21,         #s1-21:focus  ~ #Tooltip1-21,           #Tooltip1-21:hover,
+  #s1-21-2:hover  ~ #Tooltip1-21-2,       #s1-21-2:focus  ~ #Tooltip1-21-2,       #Tooltip1-21-2:hover,
+  #s1-22:hover    ~ #Tooltip1-22,         #s1-22:focus  ~ #Tooltip1-22,           #Tooltip1-22:hover,
+  #s1-23:hover    ~ #Tooltip1-23,         #s1-23:focus  ~ #Tooltip1-23,           #Tooltip1-23:hover,
+  #s1-24:hover    ~ #Tooltip1-24,         #s1-24:focus  ~ #Tooltip1-24,           #Tooltip1-24:hover,
+  #s1-25:hover    ~ #Tooltip1-25,         #s1-25:focus  ~ #Tooltip1-25,           #Tooltip1-25:hover,
+  #s1-26:hover    ~ #Tooltip1-26,         #s1-26:focus  ~ #Tooltip1-26,           #Tooltip1-26:hover,
+  #s1-27:hover    ~ #Tooltip1-27,         #s1-27:focus  ~ #Tooltip1-27,           #Tooltip1-27:hover,
+  #s1-28:hover    ~ #Tooltip1-28,         #s1-28:focus  ~ #Tooltip1-28,           #Tooltip1-28:hover,
+  #s1-29:hover    ~ #Tooltip1-29,         #s1-29:focus  ~ #Tooltip1-29,           #Tooltip1-29:hover,
+  #s1-30:hover    ~ #Tooltip1-30,         #s1-30:focus  ~ #Tooltip1-30,           #Tooltip1-30:hover,
+  #s1-31:hover    ~ #Tooltip1-31,         #s1-31:focus  ~ #Tooltip1-31,           #Tooltip1-31:hover,
+  #s1-32:hover    ~ #Tooltip1-32,         #s1-32:focus  ~ #Tooltip1-32,           #Tooltip1-32:hover,
+  #s1-32-1:hover  ~ #Tooltip1-32-1,       #s1-32-1:focus  ~ #Tooltip1-32-1,       #Tooltip1-32-1:hover,
+  #s1-33:hover    ~ #Tooltip1-33,         #s1-33:focus  ~ #Tooltip1-33,           #Tooltip1-33:hover,
+  #s1-34:hover    ~ #Tooltip1-34,         #s1-34:focus  ~ #Tooltip1-34,           #Tooltip1-34:hover,
+  #s1-35:hover    ~ #Tooltip1-35,         #s1-35:focus  ~ #Tooltip1-35,           #Tooltip1-35:hover,
+  #s1-36:hover    ~ #Tooltip1-36,         #s1-36:focus  ~ #Tooltip1-36,           #Tooltip1-36:hover,
+  #s1-37:hover    ~ #Tooltip1-37,         #s1-37:focus  ~ #Tooltip1-37,           #Tooltip1-37:hover,
+  #s1-38:hover    ~ #Tooltip1-38,         #s1-38:focus  ~ #Tooltip1-38,           #Tooltip1-38:hover,
+  #s1-39:hover    ~ #Tooltip1-39,         #s1-39:focus  ~ #Tooltip1-39,           #Tooltip1-39:hover,
+  #s-ex1-2:hover  ~ #TooltipS-ex1-2,      #s-ex1-2:focus  ~ #TooltipS-ex1-2,      #TooltipS-ex1-2:hover,
+  #s-ex1-1:hover  ~ #TooltipS-ex1-1,      #s-ex1-1:focus  ~ #TooltipS-ex1-1,      #TooltipS-ex1-1:hover{
+     opacity: 1;
+     -ms-transform: scale(1.52425);
+            transform: var(--BoxSize);
+     display: block;
+  }
